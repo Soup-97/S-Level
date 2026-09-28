@@ -1,0 +1,50 @@
+{
+    "name": "hawer/flarum-s-level",
+    "description": "A level system for Flarum: users earn XP for posting, starting discussions and receiving likes, and level up over time.",
+    "keywords": ["flarum", "level", "xp", "gamification", "rank"],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "flarum/core": "^2.0.0-rc.8"
+    },
+    "authors": [
+        {
+            "name": "Tobias Hawerkamp",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hawer\\SLevel\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "S-Level",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-chart-line",
+                "color": "#fff",
+                "backgroundColor": "#6c5ce7"
+            },
+            "optional-dependencies": [
+                "flarum/likes",
+                "flarum/approval"
+            ]
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "css": true,
+                "locale": true,
+                "migrations": true,
+                "console": true
+            }
+        }
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true
+}

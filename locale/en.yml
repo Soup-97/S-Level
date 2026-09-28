@@ -1,0 +1,27 @@
+hawer-s-level:
+  forum:
+    badge_label: "Lv. {level}"
+    badge_tooltip: "Level {level} · {xp} XP"
+    level_label: "Level {level}"
+    progress_text: "{current} / {next} XP"
+    max_level_text: "{xp} XP · max level"
+
+  admin:
+    settings:
+      xp_per_post_label: XP per post
+      xp_per_post_help: Awarded for every visible reply, including the first post of a discussion.
+      xp_per_discussion_label: XP per discussion
+      xp_per_discussion_help: Bonus awarded for starting a discussion (on top of the XP for its first post).
+      xp_per_like_label: XP per like received
+      xp_per_like_help: Requires Flarum Likes. Likes on your own posts do not count.
+      base_xp_label: Base XP
+      base_xp_help: "XP needed to reach level 2. Total XP for level L = base × (L − 1) ^ exponent."
+      exponent_label: Growth exponent
+      exponent_help: "1 = every level costs the same; higher values make later levels harder. Default: 1.5."
+      max_level_label: Maximum level
+      max_level_help: 0 means unlimited.
+      titles_label: Level titles
+      titles_help: "One per line, as \"level: title\". A title applies from that level until the next listed one."
+      show_on_posts_label: Show level badge next to post authors
+      show_progress_label: Show XP progress bar on user cards
+      recalculate_help: "After installing or changing XP values, run \"php flarum s-level:recalculate\" to rebuild everyone's XP from existing content."

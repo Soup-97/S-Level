@@ -1,0 +1,13 @@
+{
+  // Use Flarum's tsconfig as a starting point
+  "extends": "flarum-tsconfig",
+  // Core typings come from a Flarum install (composer) in ../vendor
+  "include": ["src/**/*", "../vendor/*/*/js/dist-typings/@types/**/*", "@types/**/*"],
+  "compilerOptions": {
+    "declarationDir": "./dist-typings",
+    "baseUrl": ".",
+    "paths": {
+      "flarum/*": ["../vendor/flarum/core/js/dist-typings/*"]
+    }
+  }
+}

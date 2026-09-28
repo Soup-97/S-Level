@@ -1,0 +1,69 @@
+@s-level-accent: var(--primary-color);
+
+.SLevelBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  white-space: nowrap;
+  color: var(--body-bg);
+  background: @s-level-accent;
+  vertical-align: middle;
+
+  &-title {
+    font-weight: 500;
+    opacity: 0.9;
+
+    &::before {
+      content: '·';
+      margin-right: 4px;
+    }
+  }
+}
+
+.PostUser-level {
+  margin-top: 4px;
+
+  @media (min-width: 768px) {
+    display: inline-block;
+    margin: 0 0 0 8px;
+  }
+}
+
+.UserCard-level {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+
+  .SLevelBadge {
+    align-self: flex-start;
+    color: var(--usercard-bg, var(--body-bg));
+    background: var(--body-bg);
+  }
+}
+
+.SLevelProgress {
+  &-bar {
+    height: 6px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: currentColor;
+    transition: width 0.4s ease;
+  }
+
+  &-text {
+    font-size: 11px;
+    opacity: 0.85;
+  }
+}
