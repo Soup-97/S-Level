@@ -156,7 +156,8 @@ class AwardXp
                 ->whereIn('post_likes.post_id', $posts->keys())
                 ->whereColumn('post_likes.user_id', '!=', 'posts.user_id')
                 ->groupBy('posts.user_id')
-                ->selectRaw('posts.user_id as author_id, count(*) as aggregate')
+                ->select('posts.user_id as author_id')
+                ->selectRaw('count(*) as aggregate')
                 ->pluck('aggregate', 'author_id');
 
             foreach ($likes as $userId => $count) {

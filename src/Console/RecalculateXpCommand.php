@@ -73,7 +73,8 @@ class RecalculateXpCommand extends AbstractCommand
                     ->where('posts.is_private', false)
                     ->whereNull('posts.hidden_at')
                     ->groupBy('posts.user_id')
-                    ->selectRaw('posts.user_id as author_id, count(*) as aggregate')
+                    ->select('posts.user_id as author_id')
+                    ->selectRaw('count(*) as aggregate')
                     ->pluck('aggregate', 'author_id');
             }
 
